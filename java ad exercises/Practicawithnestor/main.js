@@ -84,6 +84,9 @@ function enabledUsers(listOfUsers, listOfPermissions) {
   };
   // Search user in the list
   this.searchUser = function(user2Search) {
+    if (this.listOfUsers.indexOf(user2Search) == -1) {
+      return "This user does not exist";
+    }
     return this.listOfUsers.indexOf(user2Search);
   };
 
