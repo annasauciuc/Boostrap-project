@@ -78,12 +78,19 @@ function enabledUsers(listOfUsers, listOfPermissions) {
   this.listOfPermissions = listOfPermissions;
 
   // Add user to the list with a permission
-  this.addUser = function(user2Add, userPermission) {
+  this.addUser = function (user2Add, userPermission) {
+    if (this.listOfUsers.push(user2Add) instanceof Usuario) {
+      return this.listOfUsers.push(user2Add);
+    };
+    if (this.listOfPermissions.push(userPermission) == -1) {
+      return "You are not allowed"
+    }
+
     this.listOfUsers.push(user2Add);
     this.listOfPermissions.push(userPermission);
   };
   // Search user in the list
-  this.searchUser = function(user2Search) {
+  this.searchUser = function (user2Search) {
     if (this.listOfUsers.indexOf(user2Search) == -1) {
       return "This user does not exist";
     }
@@ -91,12 +98,15 @@ function enabledUsers(listOfUsers, listOfPermissions) {
   };
 
   // Return permisssion of an user
-  this.permissionOfUser = function(user2Search) {
+  this.permissionOfUser = function (user2Search) {
     return this.listOfPermissions[this.searchUser(user2Search)];
   };
 
   // Set the permission to a specific User
-  this.setPermission = function(user2Set, permission2Set) {
+  this.setPermission = function (user2Set, permission2Set) {
+    if ((this.listOfPermissions[this.searchUser(user2Set)] = permission2Set) == -1) {
+      return "You are not allowed"
+    };
     this.listOfPermissions[this.searchUser(user2Set)] = permission2Set;
   };
 }
