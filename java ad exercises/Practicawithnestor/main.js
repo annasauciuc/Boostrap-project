@@ -67,6 +67,7 @@ var Rober = new Usuario(
   "1536435340"
 );
 
+
 /**
  * # enabledUsers
  * ## Parametros
@@ -78,12 +79,14 @@ function enabledUsers(listOfUsers, listOfPermissions) {
   this.listOfPermissions = listOfPermissions;
 
   // Add user to the list with a permission
-  this.addUser = function(user2Add, userPermission) {
-    if (user2Add instanceof Usuario) {
+  this.addUser = function (user2Add, userPermission) {
+    if (user2Add instanceof enabledUsers) {
       if (userPermission === 1 || userPermission === 0) {
         this.listOfUsers.push(user2Add);
         this.listOfPermissions.push(userPermission);
-      } else {
+        console.log("Welcome");
+      }
+      else {
         console.log("You are not allowed");
       }
     }
@@ -92,35 +95,36 @@ function enabledUsers(listOfUsers, listOfPermissions) {
     this.listOfPermissions.push(userPermission);
   };
   // Search user in the list
-  this.searchUser = function(user2Search) {
-    if (user2Add instanceof Usuario) {
-      this.listOfUsers.push(user2Add);
-    }
+  this.searchUser = function (user2Search) {
     if (this.listOfUsers.indexOf(user2Search) == -1) {
       return "This user does not exist";
     }
-    return this.listOfUsers.indexOf(user2Search);
+    else {
+      return this.listOfUsers.indexOf(user2Search);
+    }
+
   };
 
   // Return permisssion of an user
-  this.permissionOfUser = function(user2Search) {
-    return this.listOfPermissions[this.searchUser(user2Search)];
+  this.permissionOfUser = function (user2Search) {
+    if (user2Add instanceof enabledUsers) {
+      return this.listOfPermissions[this.searchUser(user2Search)];
+    }
+
   };
 
   // Set the permission to a specific User
-  this.setPermission = function(user2Set, permission2Set) {
-    if (
-      (this.listOfPermissions[this.searchUser(user2Set)] = permission2Set) == -1
-    ) {
-      return "You are not allowed";
+  this.setPermission = function (user2Set, permission2Set) {
+    if (user2Set instanceof enabledUsers) {
+      if (permission2Set === 0 || userPermission === 0) {
+        this.listOfPermissions[this.searchUser(user2Set)] = permission2Set
+
+      } else {
+        console.log("You can not do this");
+      }
     }
-    this.listOfPermissions[this.searchUser(user2Set)] = permission2Set;
-  };
+  }
+
+
 }
-
 var listTotal = new enabledUsers([], []);
-
-// var cosa = [0, 5, uye, 67, 67];
-// cosa[4] = 67; // undefined
-// CRUD
-listTotal.addUser(AnaMery, 1);
