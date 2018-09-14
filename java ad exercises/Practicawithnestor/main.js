@@ -13,6 +13,7 @@
  * ### Salida
  *  - No tiene
  */
+//Function constructora
 function Usuario(nombre, edad, email, tz, rol, tsLastConnection) {
   this.nombre = nombre;
   this.edad = edad;
@@ -74,25 +75,39 @@ var Rober = new Usuario(
  * @param listOfUsers Array de Usuarios
  * @param listOfPermissions Array de booleans
  */
+//Function constructora
 function enabledUsers(listOfUsers, listOfPermissions) {
   this.listOfUsers = listOfUsers;
   this.listOfPermissions = listOfPermissions;
 
   // Add user to the list with a permission
+
+  //Actions
   this.addUser = function (user2Add, userPermission) {
-    if (user2Add instanceof enabledUsers) {
+    // Check if input parameter user2Add is an Usuario
+    if (user2Add instanceof Usuario) {
+      // check if input parameter userPermission have value 1 or 0 
       if (userPermission === 1 || userPermission === 0) {
-        this.listOfUsers.push(user2Add);
-        this.listOfPermissions.push(userPermission);
-        console.log("Welcome");
+        // check if input parameter user2Add exists in the system(if is added previously)
+        if (this.checkIfExists(user2Add) == false) {
+          this.listOfUsers.push(user2Add);
+          this.listOfPermissions.push(userPermission);
+          console.log('Welcome ' + user2Add.nombre);
+        }
+        else {
+          // The user exists in the system
+          console.log('This user exists already');
+        }
+
       }
       else {
-        console.log("You are not allowed");
+        // the input parameter isn't 1 or 2
+        console.log("You are not allowed :" + userPermission);
       }
+    } else {
+      // the input user parameter isn't an Usuario
+      console.log("You are not an user: " + user2Add);
     }
-
-    this.listOfUsers.push(user2Add);
-    this.listOfPermissions.push(userPermission);
   };
   // Search user in the list
   this.searchUser = function (user2Search) {
@@ -107,24 +122,55 @@ function enabledUsers(listOfUsers, listOfPermissions) {
 
   // Return permisssion of an user
   this.permissionOfUser = function (user2Search) {
-    if (user2Add instanceof enabledUsers) {
-      return this.listOfPermissions[this.searchUser(user2Search)];
+    // Check if the input parameter is an User
+    if (user2Search instanceof Usuario) {
+      // Need to check if this user exists in the system
+      // If the user exists just show the permisions
+      //If the user don't exist show a message like the user don't exists
+      if (this.checkIfExists(user2Search) == true) {
+        return this.listOfPermissions[this.searchUser(user2Search)];
+      } else {
+        console.log("You are not in the list: " + user2Search.nombre);
+      }
     }
-
+    else {
+      console.log("You are not an user: " + user2Search);
+    }
   };
 
   // Set the permission to a specific User
   this.setPermission = function (user2Set, permission2Set) {
-    if (user2Set instanceof enabledUsers) {
-      if (permission2Set === 0 || userPermission === 0) {
-        this.listOfPermissions[this.searchUser(user2Set)] = permission2Set
+    // Check if the input parameter is an User
+    if (user2Set instanceof Usuario) {
+      // check if input parameter permission2Set have value 1 or 0 
+
+      if (permission2Set === 1 || permission2Set === 0) {
+        if (this.checkIfExists(user2Set) == true) {
+          return this.listOfPermissions[this.searchUser(user2Set)] = permission2Set;
+        } else {
+          console.log("You are not a user");
+        }
+        // Need to check if this user exists in the system
+        // If the user exists just show the permisions
+        //If the user don't exist show a message like the user don't exists
+
 
       } else {
         console.log("You can not do this");
       }
+
+    } else {
+      console.log("You are not a user");
     }
   }
 
-
+  this.checkIfExists = function (user) {
+    if (this.listOfUsers.indexOf(user) == -1) {
+      return false;
+    }
+    else {
+      return true;
+    }
+  }
 }
 var listTotal = new enabledUsers([], []);
