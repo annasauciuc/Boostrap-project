@@ -1,0 +1,32 @@
+.navbar-brand {
+    font-size: 4.25rem;
+}
+
+.btn-exit {
+    margin-left: 5px;
+}
+
+.fab {
+    color: rgb(0, 66, 128);
+}
+
+.footer-list {
+    width: 100%;
+    justify-content: space-between;
+}
+
+.right-item {
+    margin-left: auto;
+}
+
+.card {
+    margin-top: 45px;
+    margin-left: 60px;
+}
+
+.fas {
+    font-size: 8rem;
+    margin-left: 90px;
+    margin-top: 20px;
+    color: grey;
+}
