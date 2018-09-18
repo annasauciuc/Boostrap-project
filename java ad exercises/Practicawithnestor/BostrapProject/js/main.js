@@ -178,19 +178,33 @@ function separateForRoles(listOfUsers) {
   var admin = listOfUsers.filter(function(user) {
     return user.rol.toLowerCase() == "admin";
   });
-  var editor = listOfUsers.filter(user => user.rol.toLowerCase() == "editor");
-  var user = listOfUsers.filter(user => user.rol.toLowerCase() == "user");
+  var editor = listOfUsers.filter(function(user) {
+    return user.rol.toLowerCase() == "editor";
+  });
+
+  var user = listOfUsers.filter(function(user) {
+    user.rol.toLowerCase() == "user";
+  });
   console.log("admin", admin);
   console.log("editor", editor);
   console.log("user", user);
 }
 
 separateForRoles(listTotal.listOfUsers);
-// var colors = [];
-// colors.push("black", "white", "grey", "pink", "yellow");
-// console.log(colors);
-// console.log(colors.length);
-// for (var i = 0; i < colors.length; i++) {
-//   colors[i];
-//   console.log(colors[i], colors[i].length);
+
+// var html = "";
+// var red;
+// var green;
+// var blue;
+// var rgbColor;
+
+// for (var i = 1; i <= 100; i += 1) {
+//   red = Math.floor(Math.random() * 256);
+//   green = Math.floor(Math.random() * 256);
+//   blue = Math.floor(Math.random() * 256);
+//   rgbColor = "rgb(" + red + "," + green + "," + blue + ")";
+//   html += '<div style="background-color:' + rgbColor + '"></div>';
 // }
+
+// document.write(html);
+// console.log(html);
