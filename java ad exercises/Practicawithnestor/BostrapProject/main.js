@@ -184,3 +184,11 @@ function separateForRoles(listOfUsers) {
 }
 
 separateForRoles(listTotal.listOfUsers);
+// var colors = [];
+// colors.push("black", "white", "grey", "pink", "yellow");
+// console.log(colors);
+// console.log(colors.length);
+// for (var i = 0; i < colors.length; i++) {
+//   colors[i];
+//   console.log(colors[i], colors[i].length);
+// }
