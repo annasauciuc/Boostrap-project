@@ -94,6 +94,7 @@ function enabledUsers(listOfUsers, listOfPermissions) {
           this.listOfPermissions.push(userPermission);
           console.log('Welcome ' + user2Add.nombre);
         }
+
         else {
           // The user exists in the system
           console.log('This user exists already');
@@ -174,3 +175,33 @@ function enabledUsers(listOfUsers, listOfPermissions) {
   }
 }
 var listTotal = new enabledUsers([], []);
+
+listTotal.addUser(AnaMery, 1);
+listTotal.addUser(Rober, 1);
+listTotal.addUser(Dani, 1);
+listTotal.addUser(CrisCris, 1);
+listTotal.addUser(DaniLatinLover, 1);
+
+//separate the users for roles
+function separateForRoles(listOfUsers) {
+  //   for(var i=0; i<listOfUsers.length;i++){
+  // console.log(listOfUsers[i].rol)
+
+  //   }
+  var admin = listOfUsers.filter((user) => user.rol.toLowerCase() == "admin");
+  var editor = listOfUsers.filter((user) => user.rol.toLowerCase() == "editor");
+  var user = listOfUsers.filter((user) => user.rol.toLowerCase() == "user");
+  console.log("admin", admin);
+  console.log("editor", editor)
+  console.log("user", user)
+}
+
+
+separateForRoles(listTotal.listOfUsers);
+
+
+
+
+
+
+

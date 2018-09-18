@@ -21,12 +21,14 @@
 
 .card {
     margin-top: 45px;
-    margin-left: 60px;
+   
 }
 
 .fas {
     font-size: 8rem;
-    margin-left: 90px;
+    
     margin-top: 20px;
     color: grey;
 }
+
+
