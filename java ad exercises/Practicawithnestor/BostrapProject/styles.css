@@ -1,13 +1,14 @@
-.navbar-brand {
-    font-size: 4.25rem;
+body {
+    background-color: #f5f8fa;
 }
 
 .btn-exit {
     margin-left: 5px;
 }
 
-.fab {
-    color: rgb(0, 66, 128);
+#logo {
+    width: 40%;
+    border-radius: 100px;
 }
 
 .footer-list {
@@ -21,14 +22,10 @@
 
 .card {
     margin-top: 45px;
-   
 }
 
 .fas {
     font-size: 8rem;
-    
     margin-top: 20px;
     color: grey;
 }
-
-
