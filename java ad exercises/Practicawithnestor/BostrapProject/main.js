@@ -175,7 +175,9 @@ function separateForRoles(listOfUsers) {
   //   for(var i=0; i<listOfUsers.length;i++){
   // console.log(listOfUsers[i].rol)
   //   }
-  var admin = listOfUsers.filter(user => user.rol.toLowerCase() == "admin");
+  var admin = listOfUsers.filter(function(user) {
+    return user.rol.toLowerCase() == "admin";
+  });
   var editor = listOfUsers.filter(user => user.rol.toLowerCase() == "editor");
   var user = listOfUsers.filter(user => user.rol.toLowerCase() == "user");
   console.log("admin", admin);
