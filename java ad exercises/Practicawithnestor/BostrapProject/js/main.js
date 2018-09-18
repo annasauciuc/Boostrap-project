@@ -197,14 +197,22 @@ separateForRoles(listTotal.listOfUsers);
 // var green;
 // var blue;
 // var rgbColor;
-
+// var div = document.createElement("div");
 // for (var i = 1; i <= 100; i += 1) {
 //   red = Math.floor(Math.random() * 256);
 //   green = Math.floor(Math.random() * 256);
 //   blue = Math.floor(Math.random() * 256);
 //   rgbColor = "rgb(" + red + "," + green + "," + blue + ")";
-//   html += '<div style="background-color:' + rgbColor + '"></div>';
+//   html += '<div class="card-body"></div>';
 // }
+// document.getElementById("admins").appendChild(div);
 
-// document.write(html);
 // console.log(html);
+var div = document.createElement("div");
+div.classList.add("card", "col-lg-3", "col-sm-6", "col-md-4");
+div.innerHTML = ' <i class="fas card-img-top fa-user-alt" />' + " ";
+var p = document.createElement("p");
+div.classList.add("card-text");
+p.innerHTML = "<p>+" + "Hello" + "</p>";
+var h = document.createElement("h5");
+document.getElementById("admins").appendChild(div);
