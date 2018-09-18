@@ -68,7 +68,6 @@ var Rober = new Usuario(
   "1536435340"
 );
 
-
 /**
  * # enabledUsers
  * ## Parametros
@@ -83,25 +82,21 @@ function enabledUsers(listOfUsers, listOfPermissions) {
   // Add user to the list with a permission
 
   //Actions
-  this.addUser = function (user2Add, userPermission) {
+  this.addUser = function(user2Add, userPermission) {
     // Check if input parameter user2Add is an Usuario
     if (user2Add instanceof Usuario) {
-      // check if input parameter userPermission have value 1 or 0 
+      // check if input parameter userPermission have value 1 or 0
       if (userPermission === 1 || userPermission === 0) {
         // check if input parameter user2Add exists in the system(if is added previously)
         if (this.checkIfExists(user2Add) == false) {
           this.listOfUsers.push(user2Add);
           this.listOfPermissions.push(userPermission);
-          console.log('Welcome ' + user2Add.nombre);
-        }
-
-        else {
+          console.log("Welcome " + user2Add.nombre);
+        } else {
           // The user exists in the system
-          console.log('This user exists already');
+          console.log("This user exists already");
         }
-
-      }
-      else {
+      } else {
         // the input parameter isn't 1 or 2
         console.log("You are not allowed :" + userPermission);
       }
@@ -111,18 +106,16 @@ function enabledUsers(listOfUsers, listOfPermissions) {
     }
   };
   // Search user in the list
-  this.searchUser = function (user2Search) {
+  this.searchUser = function(user2Search) {
     if (this.listOfUsers.indexOf(user2Search) == -1) {
       return "This user does not exist";
-    }
-    else {
+    } else {
       return this.listOfUsers.indexOf(user2Search);
     }
-
   };
 
   // Return permisssion of an user
-  this.permissionOfUser = function (user2Search) {
+  this.permissionOfUser = function(user2Search) {
     // Check if the input parameter is an User
     if (user2Search instanceof Usuario) {
       // Need to check if this user exists in the system
@@ -133,46 +126,41 @@ function enabledUsers(listOfUsers, listOfPermissions) {
       } else {
         console.log("You are not in the list: " + user2Search.nombre);
       }
-    }
-    else {
+    } else {
       console.log("You are not an user: " + user2Search);
     }
   };
 
   // Set the permission to a specific User
-  this.setPermission = function (user2Set, permission2Set) {
+  this.setPermission = function(user2Set, permission2Set) {
     // Check if the input parameter is an User
     if (user2Set instanceof Usuario) {
-      // check if input parameter permission2Set have value 1 or 0 
-
+      // check if input parameter permission2Set have value 1 or 0
       if (permission2Set === 1 || permission2Set === 0) {
         if (this.checkIfExists(user2Set) == true) {
-          return this.listOfPermissions[this.searchUser(user2Set)] = permission2Set;
+          return (this.listOfPermissions[
+            this.searchUser(user2Set)
+          ] = permission2Set);
         } else {
           console.log("You are not a user");
         }
         // Need to check if this user exists in the system
         // If the user exists just show the permisions
         //If the user don't exist show a message like the user don't exists
-
-
       } else {
         console.log("You can not do this");
       }
-
     } else {
       console.log("You are not a user");
     }
-  }
-
-  this.checkIfExists = function (user) {
+  };
+  this.checkIfExists = function(user) {
     if (this.listOfUsers.indexOf(user) == -1) {
       return false;
-    }
-    else {
+    } else {
       return true;
     }
-  }
+  };
 }
 var listTotal = new enabledUsers([], []);
 
@@ -186,22 +174,13 @@ listTotal.addUser(DaniLatinLover, 1);
 function separateForRoles(listOfUsers) {
   //   for(var i=0; i<listOfUsers.length;i++){
   // console.log(listOfUsers[i].rol)
-
   //   }
-  var admin = listOfUsers.filter((user) => user.rol.toLowerCase() == "admin");
-  var editor = listOfUsers.filter((user) => user.rol.toLowerCase() == "editor");
-  var user = listOfUsers.filter((user) => user.rol.toLowerCase() == "user");
+  var admin = listOfUsers.filter(user => user.rol.toLowerCase() == "admin");
+  var editor = listOfUsers.filter(user => user.rol.toLowerCase() == "editor");
+  var user = listOfUsers.filter(user => user.rol.toLowerCase() == "user");
   console.log("admin", admin);
-  console.log("editor", editor)
-  console.log("user", user)
+  console.log("editor", editor);
+  console.log("user", user);
 }
 
-
 separateForRoles(listTotal.listOfUsers);
-
-
-
-
-
-
-
