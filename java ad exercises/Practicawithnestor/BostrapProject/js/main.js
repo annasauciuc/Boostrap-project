@@ -28,7 +28,7 @@ var Dani = new Usuario(
   "56",
   "notiene@cosa.com",
   "atlantic/canary",
-  "editor",
+  "Editor",
   "1536775340"
 );
 
@@ -46,7 +46,7 @@ var DaniLatinLover = new Usuario(
   "89",
   "querisa@cosadecorreo.com",
   "Europe/Dublin",
-  "editor",
+  "Editor",
   "1536710340"
 );
 
@@ -55,7 +55,7 @@ var CrisCris = new Usuario(
   "34",
   "voyadisfrutar@aol.com",
   "Pacific/Tahiti",
-  "admin",
+  "Admin",
   "1536996340"
 );
 
@@ -64,10 +64,57 @@ var Rober = new Usuario(
   "20",
   "aquamanmola@peli.com",
   "Europe/Vienna",
-  "user",
+  "User",
   "1536435340"
 );
-
+var Marolyn = new Usuario(
+  "Marolyn Wuachimango",
+  "18",
+  "voyadisfrutar@aol.com",
+  "Pacific/Tahiti",
+  "Admin",
+  "1536996340"
+);
+var Maria = new Usuario(
+  "Maria Wuachimango",
+  "18",
+  "voyadisfrutar@aol.com",
+  "Pacific/Tahiti",
+  "Editor",
+  "1536996340"
+);
+var Jamilla = new Usuario(
+  "Jamilla Wuachimango",
+  "18",
+  "voyadisfrutar@aol.com",
+  "Pacific/Tahiti",
+  "User",
+  "1536996340"
+);
+var Nestor = new Usuario(
+  "Nestor Wuachimango",
+  "21",
+  "voyadisfrutar@aol.com",
+  "Pacific/Tahiti",
+  "User",
+  "1536996340"
+);
+var Manuel = new Usuario(
+  "Manuel Wuachimango",
+  "36",
+  "voyadisfrutar@aol.com",
+  "Pacific/Tahiti",
+  "Editor",
+  "1536996340"
+);
+var Antoniu = new Usuario(
+  "Manuel Wuachimango",
+  "30",
+  "voyadisfrutar@aol.com",
+  "Pacific/Tahiti",
+  "Admin",
+  "1536996340"
+);
 /**
  * # enabledUsers
  * ## Parametros
@@ -164,11 +211,16 @@ function enabledUsers(listOfUsers, listOfPermissions) {
 }
 var listTotal = new enabledUsers([], []);
 
+listTotal.addUser(Marolyn, 1);
 listTotal.addUser(AnaMery, 1);
 listTotal.addUser(Rober, 1);
 listTotal.addUser(Dani, 1);
 listTotal.addUser(CrisCris, 1);
 listTotal.addUser(DaniLatinLover, 1);
+listTotal.addUser(Nestor, 1);
+listTotal.addUser(Maria, 1);
+listTotal.addUser(Manuel, 1);
+listTotal.addUser(Antoniu, 1);
 
 var admin = listTotal.listOfUsers.filter(function(user) {
   return user.rol.toLowerCase() == "admin";
@@ -225,14 +277,20 @@ for (var i = 0; i < admin.length; i++) {
   body.className = "card-text";
   body.innerHTML =
     "<br>" +
+    "Age : " +
     admin[i].edad +
+    " years" +
     "<br>" +
+    "Email : " +
     admin[i].email +
     "<br>" +
+    "Time zone : " +
     admin[i].tz +
     "<br>" +
+    "Rol : " +
     admin[i].rol +
     "<br>" +
+    "Last Connection : " +
     admin[i].tsLastConnection;
   divChild.appendChild(body);
   divMain.appendChild(divChild);
@@ -245,9 +303,9 @@ for (var i = 0; i < editor.length; i++) {
   //adds the classes of boostrap
   divMain.classList.add(
     "card",
-    "col-lg-3",
     "col-sm-6",
     "col-md-4",
+    "col-lg-3",
     "alert-primary"
   );
   //adds the font awseome
@@ -275,14 +333,20 @@ for (var i = 0; i < editor.length; i++) {
   //inserts in the p the caracteristics of every editor
   body.innerHTML =
     "<br>" +
+    "Age : " +
     editor[i].edad +
+    " years" +
     "<br>" +
+    "Email : " +
     editor[i].email +
     "<br>" +
+    "Time zone : " +
     editor[i].tz +
     "<br>" +
+    "Rol : " +
     editor[i].rol +
     "<br>" +
+    "Last Connection : " +
     editor[i].tsLastConnection;
   //attaches the p to the main div
   divChild.appendChild(body);
@@ -314,14 +378,20 @@ for (var i = 0; i < user.length; i++) {
   body.className = "card-text";
   body.innerHTML =
     "<br>" +
+    "Age : " +
     user[i].edad +
+    " years" +
     "<br>" +
+    "Email : " +
     user[i].email +
     "<br>" +
+    "Time zone : " +
     user[i].tz +
     "<br>" +
+    "Rol : " +
     user[i].rol +
     "<br>" +
+    "Last Connection : " +
     user[i].tsLastConnection;
   divChild.appendChild(body);
   divMain.appendChild(divChild);
