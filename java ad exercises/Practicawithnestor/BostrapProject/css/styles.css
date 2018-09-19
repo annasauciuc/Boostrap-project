@@ -27,10 +27,30 @@ body {
 .card-img-top {
     /* font-size: 8rem; */
     margin-top: 20px;
-    color: grey;
+    color: #f5f8fa;
+    background-color: #17a2b8;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
 
 .fade:not(.show) {
     /* opacity: 0; */
     display: none;
+}
+
+a {
+    color: grey;
+    background-color: transparent;
+}
+
+.nav-tabs .nav-link {
+    color: black;
+    border: 1px solid grey;
+    border-top-left-radius: .25rem;
+    border-top-right-radius: .25rem;
+}
+
+.card {
+    border: 1px solid #17a2b8;
+    background-color: #e2e3e5;
 }

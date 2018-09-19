@@ -262,10 +262,10 @@ for (var i = 0; i < admin.length; i++) {
     "col-lg-3",
     "col-sm-6",
     "col-md-4",
-    "alert-primary"
+    "btn-outline-info"
   );
   var iconUser = document.createElement("i");
-  iconUser.className = "fas fa-5x card-img-top fa-user-alt text-center";
+  iconUser.className = "fas fa-6x card-img-top fa-user-alt text-center";
   divMain.appendChild(iconUser);
   var divChild = document.createElement("div");
   divChild.className = "card-body";
@@ -306,12 +306,12 @@ for (var i = 0; i < editor.length; i++) {
     "col-sm-6",
     "col-md-4",
     "col-lg-3",
-    "alert-primary"
+    "btn-outline-info"
   );
   //adds the font awseome
   var iconUser = document.createElement("i");
   //adds the font awesome classes
-  iconUser.className = "fas fa-5x card-img-top fa-user-alt text-center";
+  iconUser.className = "fas fa-6x card-img-top fa-user-alt text-center";
   //puts in the main div the font awesome
   divMain.appendChild(iconUser);
   //creates the div inside the main div
@@ -363,10 +363,10 @@ for (var i = 0; i < user.length; i++) {
     "col-lg-3",
     "col-sm-6",
     "col-md-4",
-    "alert-primary"
+    "btn-outline-info"
   );
   var iconUser = document.createElement("i");
-  iconUser.className = "fas fa-5x card-img-top fa-user-alt text-center";
+  iconUser.className = "fas fa-6x card-img-top fa-user-alt text-center";
   divMain.appendChild(iconUser);
   var divChild = document.createElement("div");
   divChild.className = "card-body";
