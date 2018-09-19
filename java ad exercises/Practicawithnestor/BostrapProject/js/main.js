@@ -205,9 +205,15 @@ separateForRoles(listTotal.listOfUsers);
 
 for (var i = 0; i < admin.length; i++) {
   var divMain = document.createElement("div");
-  divMain.classList.add("card", "col-lg-3", "col-sm-6", "col-md-4");
+  divMain.classList.add(
+    "card",
+    "col-lg-3",
+    "col-sm-6",
+    "col-md-4",
+    "alert-primary"
+  );
   var iconUser = document.createElement("i");
-  iconUser.className = "fas fa-5x card-img-top fa-user-alt";
+  iconUser.className = "fas fa-5x card-img-top fa-user-alt text-center";
   divMain.appendChild(iconUser);
   var divChild = document.createElement("div");
   divChild.className = "card-body";
@@ -218,14 +224,15 @@ for (var i = 0; i < admin.length; i++) {
   var body = document.createElement("p");
   body.className = "card-text";
   body.innerHTML =
+    "<br>" +
     admin[i].edad +
-    "\n" +
+    "<br>" +
     admin[i].email +
-    "\n" +
+    "<br>" +
     admin[i].tz +
-    "\n" +
+    "<br>" +
     admin[i].rol +
-    "\n" +
+    "<br>" +
     admin[i].tsLastConnection;
   divChild.appendChild(body);
   divMain.appendChild(divChild);
@@ -236,11 +243,17 @@ for (var i = 0; i < editor.length; i++) {
   //creates the main div
   var divMain = document.createElement("div");
   //adds the classes of boostrap
-  divMain.classList.add("card", "col-lg-3", "col-sm-6", "col-md-4");
+  divMain.classList.add(
+    "card",
+    "col-lg-3",
+    "col-sm-6",
+    "col-md-4",
+    "alert-primary"
+  );
   //adds the font awseome
   var iconUser = document.createElement("i");
   //adds the font awesome classes
-  iconUser.className = "fas fa-5x card-img-top fa-user-alt";
+  iconUser.className = "fas fa-5x card-img-top fa-user-alt text-center";
   //puts in the main div the font awesome
   divMain.appendChild(iconUser);
   //creates the div inside the main div
@@ -261,15 +274,15 @@ for (var i = 0; i < editor.length; i++) {
   body.className = "card-text";
   //inserts in the p the caracteristics of every editor
   body.innerHTML =
-    +"\n" +
+    "<br>" +
     editor[i].edad +
-    "\n" +
+    "<br>" +
     editor[i].email +
-    "\n" +
+    "<br>" +
     editor[i].tz +
-    "\n" +
+    "<br>" +
     editor[i].rol +
-    "\n" +
+    "<br>" +
     editor[i].tsLastConnection;
   //attaches the p to the main div
   divChild.appendChild(body);
@@ -281,9 +294,15 @@ for (var i = 0; i < editor.length; i++) {
 
 for (var i = 0; i < user.length; i++) {
   var divMain = document.createElement("div");
-  divMain.classList.add("card", "col-lg-3", "col-sm-6", "col-md-4");
+  divMain.classList.add(
+    "card",
+    "col-lg-3",
+    "col-sm-6",
+    "col-md-4",
+    "alert-primary"
+  );
   var iconUser = document.createElement("i");
-  iconUser.className = "fas fa-5x card-img-top fa-user-alt";
+  iconUser.className = "fas fa-5x card-img-top fa-user-alt text-center";
   divMain.appendChild(iconUser);
   var divChild = document.createElement("div");
   divChild.className = "card-body";
@@ -294,15 +313,15 @@ for (var i = 0; i < user.length; i++) {
   var body = document.createElement("p");
   body.className = "card-text";
   body.innerHTML =
-    +"\n" +
+    "<br>" +
     user[i].edad +
-    "\n" +
+    "<br>" +
     user[i].email +
-    "\n" +
+    "<br>" +
     user[i].tz +
-    "\n" +
+    "<br>" +
     user[i].rol +
-    "\n" +
+    "<br>" +
     user[i].tsLastConnection;
   divChild.appendChild(body);
   divMain.appendChild(divChild);
