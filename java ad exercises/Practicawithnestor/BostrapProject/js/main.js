@@ -248,9 +248,9 @@ function separateForRoles(listOfUsers) {
   var user = listOfUsers.filter(function(user) {
     user.rol.toLowerCase() == "user";
   });
-  console.log("admin", admin);
-  console.log("editor", editor);
-  console.log("user", user);
+  // console.log("admin", admin);
+  // console.log("editor", editor);
+  // console.log("user", user);
 }
 
 separateForRoles(listTotal.listOfUsers);
