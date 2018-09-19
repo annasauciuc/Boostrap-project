@@ -178,7 +178,7 @@ var editor = listTotal.listOfUsers.filter(function(user) {
 });
 
 var user = listTotal.listOfUsers.filter(function(user) {
-  user.rol.toLowerCase() == "user";
+  return user.rol.toLowerCase() == "user";
 });
 
 //separate the users for roles
@@ -217,27 +217,65 @@ for (var i = 0; i < admin.length; i++) {
   divChild.appendChild(title);
   var body = document.createElement("p");
   body.className = "card-text";
+  body.innerHTML =
+    admin[i].edad +
+    "\n" +
+    admin[i].email +
+    "\n" +
+    admin[i].tz +
+    "\n" +
+    admin[i].rol +
+    "\n" +
+    admin[i].tsLastConnection;
   divChild.appendChild(body);
   divMain.appendChild(divChild);
   document.getElementById("admins").appendChild(divMain);
 }
 
 for (var i = 0; i < editor.length; i++) {
+  //creates the main div
   var divMain = document.createElement("div");
+  //adds the classes of boostrap
   divMain.classList.add("card", "col-lg-3", "col-sm-6", "col-md-4");
+  //adds the font awseome
   var iconUser = document.createElement("i");
+  //adds the font awesome classes
   iconUser.className = "fas fa-5x card-img-top fa-user-alt";
+  //puts in the main div the font awesome
   divMain.appendChild(iconUser);
+  //creates the div inside the main div
   var divChild = document.createElement("div");
+  //gives the class from boostrap to the div child
   divChild.className = "card-body";
+  //creates the h5 element
   var title = document.createElement("h5");
+  //gives to h5 the class from boostrap
   title.className = "card-title";
+  //searchs the editors name depending of the index
   title.innerHTML = editor[i].nombre;
+  //puts the name for every editor in the h5 element
   divChild.appendChild(title);
+  //creates the p element
   var body = document.createElement("p");
+  //gives the p element the class from boostrap
   body.className = "card-text";
+  //inserts in the p the caracteristics of every editor
+  body.innerHTML =
+    +"\n" +
+    editor[i].edad +
+    "\n" +
+    editor[i].email +
+    "\n" +
+    editor[i].tz +
+    "\n" +
+    editor[i].rol +
+    "\n" +
+    editor[i].tsLastConnection;
+  //attaches the p to the main div
   divChild.appendChild(body);
+  //attaches the div child to the main div
   divMain.appendChild(divChild);
+  //inserts in the div with the id of editors the div main complete
   document.getElementById("editors").appendChild(divMain);
 }
 
@@ -255,6 +293,17 @@ for (var i = 0; i < user.length; i++) {
   divChild.appendChild(title);
   var body = document.createElement("p");
   body.className = "card-text";
+  body.innerHTML =
+    +"\n" +
+    user[i].edad +
+    "\n" +
+    user[i].email +
+    "\n" +
+    user[i].tz +
+    "\n" +
+    user[i].rol +
+    "\n" +
+    user[i].tsLastConnection;
   divChild.appendChild(body);
   divMain.appendChild(divChild);
   document.getElementById("users").appendChild(divMain);
