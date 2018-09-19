@@ -170,6 +170,17 @@ listTotal.addUser(Dani, 1);
 listTotal.addUser(CrisCris, 1);
 listTotal.addUser(DaniLatinLover, 1);
 
+var admin = listTotal.listOfUsers.filter(function(user) {
+  return user.rol.toLowerCase() == "admin";
+});
+var editor = listTotal.listOfUsers.filter(function(user) {
+  return user.rol.toLowerCase() == "editor";
+});
+
+var user = listTotal.listOfUsers.filter(function(user) {
+  user.rol.toLowerCase() == "user";
+});
+
 //separate the users for roles
 function separateForRoles(listOfUsers) {
   //   for(var i=0; i<listOfUsers.length;i++){
@@ -192,27 +203,59 @@ function separateForRoles(listOfUsers) {
 
 separateForRoles(listTotal.listOfUsers);
 
-// var html = "";
-// var red;
-// var green;
-// var blue;
-// var rgbColor;
-// var div = document.createElement("div");
-// for (var i = 1; i <= 100; i += 1) {
-//   red = Math.floor(Math.random() * 256);
-//   green = Math.floor(Math.random() * 256);
-//   blue = Math.floor(Math.random() * 256);
-//   rgbColor = "rgb(" + red + "," + green + "," + blue + ")";
-//   html += '<div class="card-body"></div>';
-// }
-// document.getElementById("admins").appendChild(div);
+for (var i = 0; i < admin.length; i++) {
+  var divMain = document.createElement("div");
+  divMain.classList.add("card", "col-lg-3", "col-sm-6", "col-md-4");
+  var iconUser = document.createElement("i");
+  iconUser.className = "fas fa-5x card-img-top fa-user-alt";
+  divMain.appendChild(iconUser);
+  var divChild = document.createElement("div");
+  divChild.className = "card-body";
+  var title = document.createElement("h5");
+  title.className = "card-title";
+  title.innerHTML = admin[i].nombre;
+  divChild.appendChild(title);
+  var body = document.createElement("p");
+  body.className = "card-text";
+  divChild.appendChild(body);
+  divMain.appendChild(divChild);
+  document.getElementById("admins").appendChild(divMain);
+}
 
-// console.log(html);
-var div = document.createElement("div");
-div.classList.add("card", "col-lg-3", "col-sm-6", "col-md-4");
-div.innerHTML = ' <i class="fas card-img-top fa-user-alt" />' + " ";
-var p = document.createElement("p");
-div.classList.add("card-text");
-p.innerHTML = "<p>+" + "Hello" + "</p>";
-var h = document.createElement("h5");
-document.getElementById("admins").appendChild(div);
+for (var i = 0; i < editor.length; i++) {
+  var divMain = document.createElement("div");
+  divMain.classList.add("card", "col-lg-3", "col-sm-6", "col-md-4");
+  var iconUser = document.createElement("i");
+  iconUser.className = "fas fa-5x card-img-top fa-user-alt";
+  divMain.appendChild(iconUser);
+  var divChild = document.createElement("div");
+  divChild.className = "card-body";
+  var title = document.createElement("h5");
+  title.className = "card-title";
+  title.innerHTML = editor[i].nombre;
+  divChild.appendChild(title);
+  var body = document.createElement("p");
+  body.className = "card-text";
+  divChild.appendChild(body);
+  divMain.appendChild(divChild);
+  document.getElementById("editors").appendChild(divMain);
+}
+
+for (var i = 0; i < user.length; i++) {
+  var divMain = document.createElement("div");
+  divMain.classList.add("card", "col-lg-3", "col-sm-6", "col-md-4");
+  var iconUser = document.createElement("i");
+  iconUser.className = "fas fa-5x card-img-top fa-user-alt";
+  divMain.appendChild(iconUser);
+  var divChild = document.createElement("div");
+  divChild.className = "card-body";
+  var title = document.createElement("h5");
+  title.className = "card-title";
+  title.innerHTML = user[i].nombre;
+  divChild.appendChild(title);
+  var body = document.createElement("p");
+  body.className = "card-text";
+  divChild.appendChild(body);
+  divMain.appendChild(divChild);
+  document.getElementById("users").appendChild(divMain);
+}
