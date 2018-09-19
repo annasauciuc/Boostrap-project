@@ -293,9 +293,11 @@ for (var i = 0; i < admin.length; i++) {
   divMain.appendChild(divChild);
   document.getElementById("admins").appendChild(divMain2);
 }
-
+//se esta recoriendo el array editor
 for (var i = 0; i < editor.length; i++) {
+  //creates the principal div
   var divMain2 = document.createElement("div");
+  //gives the classes to principal div
   divMain2.classList.add("col-lg-3", "col-sm-6", "col-md-4");
   //creates the main div
   var divMain = document.createElement("div");
