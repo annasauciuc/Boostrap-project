@@ -33,10 +33,10 @@ var Dani = new Usuario(
 );
 
 var AnaMery = new Usuario(
-  "Anna Mery",
+  "Anna Merry",
   "13",
-  "annamaria@correo.com",
-  "Australia/Tasmania",
+  "anna@correo.com",
+  "Europe/Dublin",
   "Admin",
   "1536745340"
 );
@@ -44,7 +44,7 @@ var AnaMery = new Usuario(
 var DaniLatinLover = new Usuario(
   "Latin Love",
   "89",
-  "querisa@cosadecorreo.com",
+  "querisa@correo.com",
   "Europe/Dublin",
   "Editor",
   "1536710340"
@@ -62,7 +62,7 @@ var CrisCris = new Usuario(
 var Rober = new Usuario(
   "Roberto Aquaman",
   "20",
-  "aquamanmola@peli.com",
+  "aquama@peli.com",
   "Europe/Vienna",
   "User",
   "1536435340"
@@ -256,14 +256,11 @@ function separateForRoles(listOfUsers) {
 separateForRoles(listTotal.listOfUsers);
 
 for (var i = 0; i < admin.length; i++) {
+  var divMain2 = document.createElement("div");
+  divMain2.classList.add("col-lg-3", "col-sm-6", "col-md-4");
   var divMain = document.createElement("div");
-  divMain.classList.add(
-    "card",
-    "col-lg-3",
-    "col-sm-6",
-    "col-md-4",
-    "btn-outline-info"
-  );
+  divMain.classList.add("card", "btn-outline-info");
+  divMain2.appendChild(divMain);
   var iconUser = document.createElement("i");
   iconUser.className = "fas fa-6x card-img-top fa-user-alt text-center";
   divMain.appendChild(iconUser);
@@ -294,20 +291,17 @@ for (var i = 0; i < admin.length; i++) {
     admin[i].tsLastConnection;
   divChild.appendChild(body);
   divMain.appendChild(divChild);
-  document.getElementById("admins").appendChild(divMain);
+  document.getElementById("admins").appendChild(divMain2);
 }
 
 for (var i = 0; i < editor.length; i++) {
+  var divMain2 = document.createElement("div");
+  divMain2.classList.add("col-lg-3", "col-sm-6", "col-md-4");
   //creates the main div
   var divMain = document.createElement("div");
   //adds the classes of boostrap
-  divMain.classList.add(
-    "card",
-    "col-sm-6",
-    "col-md-4",
-    "col-lg-3",
-    "btn-outline-info"
-  );
+  divMain.classList.add("card", "btn-outline-info");
+  divMain2.appendChild(divMain);
   //adds the font awseome
   var iconUser = document.createElement("i");
   //adds the font awesome classes
@@ -353,18 +347,15 @@ for (var i = 0; i < editor.length; i++) {
   //attaches the div child to the main div
   divMain.appendChild(divChild);
   //inserts in the div with the id of editors the div main complete
-  document.getElementById("editors").appendChild(divMain);
+  document.getElementById("editors").appendChild(divMain2);
 }
 
 for (var i = 0; i < user.length; i++) {
+  var divMain2 = document.createElement("div");
+  divMain2.classList.add("col-lg-3", "col-sm-6", "col-md-4");
   var divMain = document.createElement("div");
-  divMain.classList.add(
-    "card",
-    "col-lg-3",
-    "col-sm-6",
-    "col-md-4",
-    "btn-outline-info"
-  );
+  divMain.classList.add("card", "btn-outline-info");
+  divMain2.appendChild(divMain);
   var iconUser = document.createElement("i");
   iconUser.className = "fas fa-6x card-img-top fa-user-alt text-center";
   divMain.appendChild(iconUser);
@@ -395,5 +386,5 @@ for (var i = 0; i < user.length; i++) {
     user[i].tsLastConnection;
   divChild.appendChild(body);
   divMain.appendChild(divChild);
-  document.getElementById("users").appendChild(divMain);
+  document.getElementById("users").appendChild(divMain2);
 }
