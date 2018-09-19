@@ -26,7 +26,7 @@ function Usuario(nombre, edad, email, tz, rol, tsLastConnection) {
 var Dani = new Usuario(
   "Daniel Wuachimango",
   "56",
-  "notiene@cosa.com",
+  "notienenada@cosa.com",
   "atlantic/canary",
   "Editor",
   "1536775340"
@@ -35,7 +35,7 @@ var Dani = new Usuario(
 var AnaMery = new Usuario(
   "Anna Merry",
   "13",
-  "anna@correo.com",
+  "annamaria2814@correo.com",
   "Europe/Dublin",
   "Admin",
   "1536745340"
@@ -44,7 +44,7 @@ var AnaMery = new Usuario(
 var DaniLatinLover = new Usuario(
   "Latin Love",
   "89",
-  "querisa@correo.com",
+  "querisasasa@correo.com",
   "Europe/Dublin",
   "Editor",
   "1536710340"
@@ -62,7 +62,7 @@ var CrisCris = new Usuario(
 var Rober = new Usuario(
   "Roberto Aquaman",
   "20",
-  "aquama@peli.com",
+  "aquamanno@peli.com",
   "Europe/Vienna",
   "User",
   "1536435340"
@@ -108,7 +108,39 @@ var Manuel = new Usuario(
   "1536996340"
 );
 var Antoniu = new Usuario(
-  "Manuel Wuachimango",
+  "Antoniu Wuachimango",
+  "30",
+  "voyadisfrutar@aol.com",
+  "Pacific/Tahiti",
+  "Admin",
+  "1536996340"
+);
+var Yure = new Usuario(
+  "Antoniu Wuachimango",
+  "30",
+  "voyadisfrutar@aol.com",
+  "Pacific/Tahiti",
+  "Admin",
+  "1536996340"
+);
+var Fabian = new Usuario(
+  "Antoniu Wuachimango",
+  "30",
+  "voyadisfrutar@aol.com",
+  "Pacific/Tahiti",
+  "Editor",
+  "1536996340"
+);
+var Stefan = new Usuario(
+  "Antoniu Wuachimango",
+  "30",
+  "voyadisfrutar@aol.com",
+  "Pacific/Tahiti",
+  "Editor",
+  "1536996340"
+);
+var Carlos = new Usuario(
+  "Antoniu Wuachimango",
   "30",
   "voyadisfrutar@aol.com",
   "Pacific/Tahiti",
@@ -221,6 +253,10 @@ listTotal.addUser(Nestor, 1);
 listTotal.addUser(Maria, 1);
 listTotal.addUser(Manuel, 1);
 listTotal.addUser(Antoniu, 1);
+listTotal.addUser(Yure, 1);
+listTotal.addUser(Fabian, 1);
+listTotal.addUser(Stefan, 1);
+listTotal.addUser(Carlos, 1);
 
 var admin = listTotal.listOfUsers.filter(function(user) {
   return user.rol.toLowerCase() == "admin";
@@ -248,9 +284,9 @@ function separateForRoles(listOfUsers) {
   var user = listOfUsers.filter(function(user) {
     user.rol.toLowerCase() == "user";
   });
-  // console.log("admin", admin);
-  // console.log("editor", editor);
-  // console.log("user", user);
+  console.log("admin", admin);
+  console.log("editor", editor);
+  console.log("user", user);
 }
 
 separateForRoles(listTotal.listOfUsers);
@@ -389,4 +425,14 @@ for (var i = 0; i < user.length; i++) {
   divChild.appendChild(body);
   divMain.appendChild(divChild);
   document.getElementById("users").appendChild(divMain2);
+}
+switch (key) {
+  case value:
+    break;
+
+  default:
+    break;
+}
+for (let index = 0; index < array.length; index++) {
+  const element = array[index];
 }

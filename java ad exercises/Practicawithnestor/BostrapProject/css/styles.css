@@ -7,7 +7,7 @@ body {
 }
 
 #logo {
-    width: 40%;
+    width: 30%;
     border-radius: 100px;
 }
 
@@ -54,3 +54,13 @@ a {
     border: 1px solid #17a2b8;
     background-color: #e2e3e5;
 }
+footer{
+    margin-top:70px;
+}
+.navbar-brand {
+    padding:0;
+    }
+    button{
+        border-radius:9px;
+        margin-right:20px;
+    }
