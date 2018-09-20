@@ -411,7 +411,7 @@ formHtml +=
   '<input type="text" class="form-control " id="inputSearch" onchange="buttonSearch(event)" placeholder="Search">';
 formHtml += "</div>";
 formHtml +=
-  '   <button  class="btn btn-primary mb-2" onclick="buttonSearch(event)">Confirm identity</button>';
+  '   <button  class="btn  btn-outline-primary mb-2" onclick="buttonSearch(event)">Confirm identity</button>';
 formHtml += "</form>";
 
 $("#myTab").append(formHtml); // Only 1 DOM manip.
