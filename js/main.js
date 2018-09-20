@@ -286,7 +286,7 @@ function renderizar() {
     var divMain = document.createElement("div");
     divMain.classList.add("col-lg-3", "col-sm-6", "col-md-4");
     var divParent = document.createElement("div");
-    divParent.classList.add("card", "btn-outline-info");
+    divParent.classList.add("card", "btn-outline-info", "shadow-lg");
     var iconUser = document.createElement("i");
     iconUser.className = "fas fa-6x card-img-top fa-user-alt text-center";
     divParent.appendChild(iconUser);
@@ -326,7 +326,7 @@ function renderizar() {
     var divMain = document.createElement("div");
     divMain.classList.add("col-lg-3", "col-sm-6", "col-md-4");
     var divParent = document.createElement("div");
-    divParent.classList.add("card", "btn-outline-info");
+    divParent.classList.add("card", "btn-outline-info", "shadow-lg");
     var iconUser = document.createElement("i");
     iconUser.className = "fas fa-6x card-img-top fa-user-alt text-center";
     divParent.appendChild(iconUser);
@@ -365,7 +365,7 @@ function renderizar() {
     var divMain = document.createElement("div");
     divMain.classList.add("col-lg-3", "col-sm-6", "col-md-4");
     var divParent = document.createElement("div");
-    divParent.classList.add("card", "btn-outline-info");
+    divParent.classList.add("card", "btn-outline-info", "shadow-lg");
     var iconUser = document.createElement("i");
     iconUser.className = "fas fa-6x card-img-top fa-user-alt text-center";
     divParent.appendChild(iconUser);
@@ -450,3 +450,5 @@ function buttonSearch(event) {
   //   });
   // }
 }
+
+document.getElementById("f-date").innerHTML = moment().format("DD/MM/YYYY");

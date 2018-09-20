@@ -13,7 +13,8 @@ function formatDate(date) {
     "November",
     "December"
   ];
-
+  var dateMoment = moment();
+  console.log("dateMomenet", dateMoment);
   var day = date.getDate();
   var monthIndex = date.getMonth();
   var year = date.getFullYear();
@@ -27,7 +28,3 @@ document.getElementById("f-date").innerHTML = formatDate(new Date());
 
 formatDate();
 console.log(formatDate(new Date()));
-
-var moment = require("moment");
-
-moment().format();
