@@ -1,5 +1,5 @@
 body {
-    background-image: linear-gradient(180deg, rgba(255, 255, 255, 0) 60%, #fff), linear-gradient(70deg, #dbedff 32%, #ebfff0)!important;
+    background-image: linear-gradient(180deg, rgba(255, 255, 255, 0) 60%, #fff), linear-gradient(70deg, #dbedff 32%, #ebfff0) !important;
 }
 
 .btn-exit {
@@ -74,4 +74,14 @@ button {
 
 .mb-2, .my-2 {
     margin: 0 !important;
+}
+
+.alert-secondary {
+    color: #383d41;
+    background-color: transparent !important;
+    border-color: transparent !important;
+}
+
+.nav-tabs {
+    border-bottom: none !important;
 }

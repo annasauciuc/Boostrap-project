@@ -27,3 +27,7 @@ document.getElementById("f-date").innerHTML = formatDate(new Date());
 
 formatDate();
 console.log(formatDate(new Date()));
+
+var moment = require("moment");
+
+moment().format();
