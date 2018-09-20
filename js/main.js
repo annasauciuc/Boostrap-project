@@ -116,7 +116,7 @@ var Antoniu = new Usuario(
   "1536996340"
 );
 var Yure = new Usuario(
-  "Antoniu Wuachimango",
+  "Yune Wuachimango",
   "30",
   "voyadisfrutar@aol.com",
   "Pacific/Tahiti",
@@ -124,7 +124,7 @@ var Yure = new Usuario(
   "1536996340"
 );
 var Fabian = new Usuario(
-  "Antoniu Wuachimango",
+  "Fabian Wuachimango",
   "30",
   "voyadisfrutar@aol.com",
   "Pacific/Tahiti",
@@ -132,7 +132,7 @@ var Fabian = new Usuario(
   "1536996340"
 );
 var Stefan = new Usuario(
-  "Antoniu Wuachimango",
+  "Stefan Wuachimango",
   "30",
   "voyadisfrutar@aol.com",
   "Pacific/Tahiti",
@@ -140,7 +140,7 @@ var Stefan = new Usuario(
   "1536996340"
 );
 var Carlos = new Usuario(
-  "Antoniu Wuachimango",
+  "Carlos Wuachimango",
   "30",
   "voyadisfrutar@aol.com",
   "Pacific/Tahiti",
@@ -284,7 +284,7 @@ function renderizar() {
   document.getElementById("rowAdmins").innerHTML = "";
   for (var i = 0; i < admin.length; i++) {
     var divMain = document.createElement("div");
-    divMain.classList.add("col-lg-3", "col-sm-6", "col-md-4");
+    divMain.classList.add("col-lg-4", "col-sm-6", "col-md-4");
     var divParent = document.createElement("div");
     divParent.classList.add("card", "btn-outline-info", "shadow-lg");
     var iconUser = document.createElement("i");
@@ -324,7 +324,7 @@ function renderizar() {
   document.getElementById("rowEditors").innerHTML = "";
   for (var i = 0; i < editor.length; i++) {
     var divMain = document.createElement("div");
-    divMain.classList.add("col-lg-3", "col-sm-6", "col-md-4");
+    divMain.classList.add("col-lg-4", "col-sm-6", "col-md-4");
     var divParent = document.createElement("div");
     divParent.classList.add("card", "btn-outline-info", "shadow-lg");
     var iconUser = document.createElement("i");
@@ -363,7 +363,7 @@ function renderizar() {
   document.getElementById("rowUsers").innerHTML = "";
   for (var i = 0; i < user.length; i++) {
     var divMain = document.createElement("div");
-    divMain.classList.add("col-lg-3", "col-sm-6", "col-md-4");
+    divMain.classList.add("col-lg-4", "col-sm-6", "col-md-4");
     var divParent = document.createElement("div");
     divParent.classList.add("card", "btn-outline-info", "shadow-lg");
     var iconUser = document.createElement("i");
