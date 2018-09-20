@@ -248,7 +248,7 @@ var admin = listTotal.listOfUsers.filter(function(user) {
 var editor = listTotal.listOfUsers.filter(function(user) {
   return user.rol.toLowerCase() == "editor";
 });
-
+//Function
 var user = listTotal.listOfUsers.filter(function(user) {
   return user.rol.toLowerCase() == "user";
 });
