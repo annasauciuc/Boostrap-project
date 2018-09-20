@@ -28,7 +28,7 @@
     <main class="container">
         <ul class="nav alert-secondary nav-tabs" id="myTab" role="tablist">
             <li class="nav-item">
-                <a class="nav-link " id="admin-tab" data-toggle="tab" href="#admins" role="tab" aria-controls="admins" aria-selected="false">
+                <a class="nav-link active " id="admin-tab" data-toggle="tab" href="#admins" role="tab" aria-controls="admins" aria-selected="false">
                     <i class="fas fa-user-tie"></i>Admins</a>
             </li>
             <li class="nav-item">
@@ -40,15 +40,21 @@
                         class="fas fa-users"></i>Users</a>
             </li>
         </ul>
-        <div class=" text-center" id="myTabContent">
-            <div class="tab-pane fade  row text-center active" id="admins" role="tabpanel" aria-labelledby="admins-tab">
+        <div class="tab-content text-center" id="myTabContent">
+            <div class="tab-pane show text-center active" id="admins" role="tabpanel" aria-labelledby="admins-tab">
+                <div id="rowAdmins" class="row">
 
+                </div>
             </div>
-            <div class="tab-pane fade row text-center" id="editors" role="tabpanel" aria-labelledby="editors-tab">
+            <div class="tab-pane fade text-center" id="editors" role="tabpanel" aria-labelledby="editors-tab">
+                <div id="rowEditors" class="row">
 
+                </div>
             </div>
-            <div class="tab-pane fade row text-center " id="users" role="tabpanel" aria-labelledby="users-tab">
+            <div class="tab-pane fade text-center " id="users" role="tabpanel" aria-labelledby="users-tab">
+                <div id="rowUsers" class="row">
 
+                </div>
             </div>
         </div>
 

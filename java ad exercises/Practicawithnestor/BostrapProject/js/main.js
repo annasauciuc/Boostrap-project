@@ -242,7 +242,28 @@ function enabledUsers(listOfUsers, listOfPermissions) {
   };
 }
 var listTotal = new enabledUsers([], []);
+var admin = listTotal.listOfUsers.filter(function(user) {
+  return user.rol.toLowerCase() == "admin";
+});
+var editor = listTotal.listOfUsers.filter(function(user) {
+  return user.rol.toLowerCase() == "editor";
+});
 
+var user = listTotal.listOfUsers.filter(function(user) {
+  return user.rol.toLowerCase() == "user";
+});
+function rellenarRoles() {
+  admin = listTotal.listOfUsers.filter(function(user) {
+    return user.rol.toLowerCase() == "admin";
+  });
+  editor = listTotal.listOfUsers.filter(function(user) {
+    return user.rol.toLowerCase() == "editor";
+  });
+
+  user = listTotal.listOfUsers.filter(function(user) {
+    return user.rol.toLowerCase() == "user";
+  });
+}
 listTotal.addUser(Marolyn, 1);
 listTotal.addUser(AnaMery, 1);
 listTotal.addUser(Rober, 1);
@@ -257,182 +278,175 @@ listTotal.addUser(Yure, 1);
 listTotal.addUser(Fabian, 1);
 listTotal.addUser(Stefan, 1);
 listTotal.addUser(Carlos, 1);
+rellenarRoles();
 
-var admin = listTotal.listOfUsers.filter(function(user) {
-  return user.rol.toLowerCase() == "admin";
-});
-var editor = listTotal.listOfUsers.filter(function(user) {
-  return user.rol.toLowerCase() == "editor";
-});
+function renderizar() {
+  document.getElementById("rowAdmins").innerHTML = "";
+  for (var i = 0; i < admin.length; i++) {
+    var divMain = document.createElement("div");
+    divMain.classList.add("col-lg-3", "col-sm-6", "col-md-4");
+    var divParent = document.createElement("div");
+    divParent.classList.add("card", "btn-outline-info");
+    var iconUser = document.createElement("i");
+    iconUser.className = "fas fa-6x card-img-top fa-user-alt text-center";
+    divParent.appendChild(iconUser);
+    var divChild = document.createElement("div");
+    divChild.className = "card-body";
+    var title = document.createElement("h5");
+    title.className = "card-title";
+    title.innerHTML = admin[i].nombre;
+    divChild.appendChild(title);
+    var body = document.createElement("p");
+    body.className = "card-text";
+    body.innerHTML =
+      "<br>" +
+      "Age : " +
+      admin[i].edad +
+      " years" +
+      "<br>" +
+      "Email : " +
+      admin[i].email +
+      "<br>" +
+      "Time zone : " +
+      admin[i].tz +
+      "<br>" +
+      "Rol : " +
+      admin[i].rol +
+      "<br>" +
+      "Last Connection : " +
+      admin[i].tsLastConnection;
+    divChild.appendChild(body);
+    divParent.appendChild(divChild);
+    divMain.appendChild(divParent);
 
-var user = listTotal.listOfUsers.filter(function(user) {
-  return user.rol.toLowerCase() == "user";
-});
+    document.getElementById("rowAdmins").appendChild(divMain);
+  }
+  document.getElementById("rowEditors").innerHTML = "";
+  for (var i = 0; i < editor.length; i++) {
+    var divMain = document.createElement("div");
+    divMain.classList.add("col-lg-3", "col-sm-6", "col-md-4");
+    var divParent = document.createElement("div");
+    divParent.classList.add("card", "btn-outline-info");
+    var iconUser = document.createElement("i");
+    iconUser.className = "fas fa-6x card-img-top fa-user-alt text-center";
+    divParent.appendChild(iconUser);
+    var divChild = document.createElement("div");
+    divChild.className = "card-body";
+    var title = document.createElement("h5");
+    title.className = "card-title";
+    title.innerHTML = editor[i].nombre;
+    divChild.appendChild(title);
+    var body = document.createElement("p");
+    body.className = "card-text";
+    body.innerHTML =
+      "<br>" +
+      "Age : " +
+      editor[i].edad +
+      " years" +
+      "<br>" +
+      "Email : " +
+      editor[i].email +
+      "<br>" +
+      "Time zone : " +
+      editor[i].tz +
+      "<br>" +
+      "Rol : " +
+      editor[i].rol +
+      "<br>" +
+      "Last Connection : " +
+      editor[i].tsLastConnection;
+    divChild.appendChild(body);
+    divParent.appendChild(divChild);
+    divMain.appendChild(divParent);
+    document.getElementById("rowEditors").appendChild(divMain);
+  }
+  document.getElementById("rowUsers").innerHTML = "";
+  for (var i = 0; i < user.length; i++) {
+    var divMain = document.createElement("div");
+    divMain.classList.add("col-lg-3", "col-sm-6", "col-md-4");
+    var divParent = document.createElement("div");
+    divParent.classList.add("card", "btn-outline-info");
+    var iconUser = document.createElement("i");
+    iconUser.className = "fas fa-6x card-img-top fa-user-alt text-center";
+    divParent.appendChild(iconUser);
+    var divChild = document.createElement("div");
+    divChild.className = "card-body";
+    var title = document.createElement("h5");
+    title.className = "card-title";
+    title.innerHTML = user[i].nombre;
+    divChild.appendChild(title);
+    var body = document.createElement("p");
+    body.className = "card-text";
+    body.innerHTML =
+      "<br>" +
+      "Age : " +
+      user[i].edad +
+      " years" +
+      "<br>" +
+      "Email : " +
+      user[i].email +
+      "<br>" +
+      "Time zone : " +
+      user[i].tz +
+      "<br>" +
+      "Rol : " +
+      user[i].rol +
+      "<br>" +
+      "Last Connection : " +
+      user[i].tsLastConnection;
+    divChild.appendChild(body);
+    divParent.appendChild(divChild);
+    divMain.appendChild(divParent);
 
-//separate the users for roles
-function separateForRoles(listOfUsers) {
-  //   for(var i=0; i<listOfUsers.length;i++){
-  // console.log(listOfUsers[i].rol)
-  //   }
-  var admin = listOfUsers.filter(function(user) {
-    return user.rol.toLowerCase() == "admin";
-  });
-  var editor = listOfUsers.filter(function(user) {
-    return user.rol.toLowerCase() == "editor";
-  });
+    document.getElementById("rowUsers").appendChild(divMain);
+  }
+}
+renderizar();
+var formHtml = "";
 
-  var user = listOfUsers.filter(function(user) {
-    user.rol.toLowerCase() == "user";
-  });
+formHtml += '<form  role="search" class="form-inline">';
+formHtml += '<div class="form-group  mb-2">';
+formHtml += ' <label for="inputSearch" class="sr-only">Search</label>';
+formHtml +=
+  '<input type="text" class="form-control " id="inputSearch" onchange="buttonSearch(event)" placeholder="Search">';
+formHtml += "</div>";
+formHtml +=
+  '   <button  class="btn btn-primary mb-2" onclick="buttonSearch(event)">Confirm identity</button>';
+formHtml += "</form>";
+
+$("#myTab").append(formHtml); // Only 1 DOM manip.
+
+function buttonSearch(event) {
+  event.preventDefault();
+  event.stopPropagation();
+  //rellenarRoles();
+  var inputValue = document.getElementById("inputSearch").value;
+  console.log("user", user);
   console.log("admin", admin);
   console.log("editor", editor);
+  user = listTotal.listOfUsers.filter(
+    obj =>
+      obj.nombre.toLowerCase().indexOf(inputValue.toLowerCase()) > -1 &&
+      obj.rol.toLowerCase() == "user"
+  );
+  admin = listTotal.listOfUsers.filter(
+    obj =>
+      obj.nombre.toLowerCase().indexOf(inputValue.toLowerCase()) > -1 &&
+      obj.rol.toLowerCase() == "admin"
+  );
+  editor = listTotal.listOfUsers.filter(
+    obj =>
+      obj.nombre.toLowerCase().indexOf(inputValue.toLowerCase()) > -1 &&
+      obj.rol.toLowerCase() == "editor"
+  );
   console.log("user", user);
-}
-
-separateForRoles(listTotal.listOfUsers);
-
-for (var i = 0; i < admin.length; i++) {
-  var divMain2 = document.createElement("div");
-  divMain2.classList.add("col-lg-3", "col-sm-6", "col-md-4");
-  var divMain = document.createElement("div");
-  divMain.classList.add("card", "btn-outline-info");
-  divMain2.appendChild(divMain);
-  var iconUser = document.createElement("i");
-  iconUser.className = "fas fa-6x card-img-top fa-user-alt text-center";
-  divMain.appendChild(iconUser);
-  var divChild = document.createElement("div");
-  divChild.className = "card-body";
-  var title = document.createElement("h5");
-  title.className = "card-title";
-  title.innerHTML = admin[i].nombre;
-  divChild.appendChild(title);
-  var body = document.createElement("p");
-  body.className = "card-text";
-  body.innerHTML =
-    "<br>" +
-    "Age : " +
-    admin[i].edad +
-    " years" +
-    "<br>" +
-    "Email : " +
-    admin[i].email +
-    "<br>" +
-    "Time zone : " +
-    admin[i].tz +
-    "<br>" +
-    "Rol : " +
-    admin[i].rol +
-    "<br>" +
-    "Last Connection : " +
-    admin[i].tsLastConnection;
-  divChild.appendChild(body);
-  divMain.appendChild(divChild);
-  document.getElementById("admins").appendChild(divMain2);
-}
-//se esta recoriendo el array editor
-for (var i = 0; i < editor.length; i++) {
-  //creates the principal div
-  var divMain2 = document.createElement("div");
-  //gives the classes to principal div
-  divMain2.classList.add("col-lg-3", "col-sm-6", "col-md-4");
-  //creates the main div
-  var divMain = document.createElement("div");
-  //adds the classes of boostrap
-  divMain.classList.add("card", "btn-outline-info");
-  divMain2.appendChild(divMain);
-  //adds the font awseome
-  var iconUser = document.createElement("i");
-  //adds the font awesome classes
-  iconUser.className = "fas fa-6x card-img-top fa-user-alt text-center";
-  //puts in the main div the font awesome
-  divMain.appendChild(iconUser);
-  //creates the div inside the main div
-  var divChild = document.createElement("div");
-  //gives the class from boostrap to the div child
-  divChild.className = "card-body";
-  //creates the h5 element
-  var title = document.createElement("h5");
-  //gives to h5 the class from boostrap
-  title.className = "card-title";
-  //searchs the editors name depending of the index
-  title.innerHTML = editor[i].nombre;
-  //puts the name for every editor in the h5 element
-  divChild.appendChild(title);
-  //creates the p element
-  var body = document.createElement("p");
-  //gives the p element the class from boostrap
-  body.className = "card-text";
-  //inserts in the p the caracteristics of every editor
-  body.innerHTML =
-    "<br>" +
-    "Age : " +
-    editor[i].edad +
-    " years" +
-    "<br>" +
-    "Email : " +
-    editor[i].email +
-    "<br>" +
-    "Time zone : " +
-    editor[i].tz +
-    "<br>" +
-    "Rol : " +
-    editor[i].rol +
-    "<br>" +
-    "Last Connection : " +
-    editor[i].tsLastConnection;
-  //attaches the p to the main div
-  divChild.appendChild(body);
-  //attaches the div child to the main div
-  divMain.appendChild(divChild);
-  //inserts in the div with the id of editors the div main complete
-  document.getElementById("editors").appendChild(divMain2);
-}
-
-for (var i = 0; i < user.length; i++) {
-  var divMain2 = document.createElement("div");
-  divMain2.classList.add("col-lg-3", "col-sm-6", "col-md-4");
-  var divMain = document.createElement("div");
-  divMain.classList.add("card", "btn-outline-info");
-  divMain2.appendChild(divMain);
-  var iconUser = document.createElement("i");
-  iconUser.className = "fas fa-6x card-img-top fa-user-alt text-center";
-  divMain.appendChild(iconUser);
-  var divChild = document.createElement("div");
-  divChild.className = "card-body";
-  var title = document.createElement("h5");
-  title.className = "card-title";
-  title.innerHTML = user[i].nombre;
-  divChild.appendChild(title);
-  var body = document.createElement("p");
-  body.className = "card-text";
-  body.innerHTML =
-    "<br>" +
-    "Age : " +
-    user[i].edad +
-    " years" +
-    "<br>" +
-    "Email : " +
-    user[i].email +
-    "<br>" +
-    "Time zone : " +
-    user[i].tz +
-    "<br>" +
-    "Rol : " +
-    user[i].rol +
-    "<br>" +
-    "Last Connection : " +
-    user[i].tsLastConnection;
-  divChild.appendChild(body);
-  divMain.appendChild(divChild);
-  document.getElementById("users").appendChild(divMain2);
-}
-switch (key) {
-  case value:
-    break;
-
-  default:
-    break;
-}
-for (let index = 0; index < array.length; index++) {
-  const element = array[index];
+  console.log("admin", admin);
+  console.log("editor", editor);
+  renderizar();
+  // for (var i = 0; i < listOfUsers.length; i++) {
+  //   console.log(buttonSearch[i]);
+  //   var search = listTotal.listOfUsers.filter(function(user) {
+  //     return user.nombre.toLowerCase() == "nombre";
+  //   });
+  // }
 }
