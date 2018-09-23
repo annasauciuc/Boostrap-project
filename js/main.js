@@ -453,3 +453,6 @@ $("#myTab").append(formHtml); // Only 1 DOM manip.
 
 //Using moment library to insert data in a element using his id
 document.getElementById("f-date").innerHTML = moment().format("DD/MM/YYYY");
+function openNewWindow() {
+  open("password.html");
+}
