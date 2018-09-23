@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 
-<body>
+<body onload="alert(msgLoad)">
     <!-- new added -->
     <header>
         <nav class="navbar navbar-fixed-top bg-dark">
@@ -23,7 +23,7 @@
                 <!-- <button type="button" class="btn  text-center btn-info">Exercise</button>
             <button type="button" class="btn  text-center btn-primary btn-info"><i class="fas fa-sign-out-alt"></i></button> -->
                 <button type="button" class="btn btn-outline-info" value="Click me to open a new window" onclick="openNewWindow()">Exercise</button>
-                <button type="button" class="btn btn-outline-primary">Exit</button>
+                <button type="button" class="btn btn-outline-primary" onmouseover="this.style.color='red'" onmouseout="this.style.color=''">Exit</button>
 
             </div>
         </nav>
@@ -61,6 +61,7 @@
             </div>
         </div>
 
+        <p onmouseover="this.style.color='red'" onmouseout="this.style.color=''">Point your mouse pointer here!!!</p>
     </main>
     <footer>
         <nav class="navbar fixed-bottom navbar-expand-sm  navbar-expand-lg   navbar-expand-md navbar-dark bg-dark">
@@ -74,6 +75,7 @@
                 </li>
             </ul>
         </nav>
+
     </footer>
     <!-- <footer class="footer">
         <div class="container">
@@ -88,6 +90,7 @@
         crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/practice.js"></script>
     <!-- <script src="js/date.js"></script> -->
 
 </body>
